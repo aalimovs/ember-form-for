@@ -13,8 +13,6 @@ const {
 const FormForComponent = Component.extend({
   layout,
 
-  tagName: 'form',
-
   config: service('ember-form-for/config'),
 
   attributeBindings: ['tabindex', 'form:id'],
