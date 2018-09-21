@@ -29,6 +29,7 @@
 
     button=(component 'form-controls/button' form=form)
     ) as |formFields|}}
+  <form {{action "submit" object on="submit"}}>
   {{#each customFormFields as |customFormField|}}
     {{form-for/merge-custom-form-field formFields
         name=customFormField.name
@@ -40,4 +41,5 @@
     }}
   {{/each}}
   {{yield formFields}}
+  </form>
 {{/with}}

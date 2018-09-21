@@ -29,8 +29,9 @@ const FormForComponent = Component.extend({
     this.propertyDidChange();
   },
 
-  submit: (object) => object.save(),
+  submit: (event) => event.preventDefault(),
   reset: (object) => object.rollback(),
+  onSubmit: (object) => object.save(),
 
   update(object, propertyName, value) {
     set(object, propertyName, value);
@@ -57,7 +58,7 @@ const FormForComponent = Component.extend({
 
   actions: {
     submit(object) {
-      let promise = get(this, 'submit')(object);
+      let promise = get(this, 'onSubmit')(object);
 
       set(this, 'tabindex', undefined);
 
