@@ -24,7 +24,7 @@ const FormForComponent = Component.extend({
     let classNames = get(this, 'classNames');
     set(this, 'classNames', (classNames || []).concat(formClasses));
 
-    this.propertyDidChange();
+    this.notifyPropertyChange();
   },
 
   submit: (event) => event.preventDefault(),
